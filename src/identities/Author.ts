@@ -1,16 +1,16 @@
 import { uuid } from "uuidv4";
-
-import { Book } from "./Book";
-
-// não obrigatorio o id pois o uuidv4 já gera um id
-
 export class Author {
-  public readonly id?: number;
-  private readonly Book: Book[];
+  public readonly id: string;
+  constructor(public author: string) {
+    this.id = uuid();
+    this.author = author;
+  }
 
-  constructor(public nome: string) {
-    this.id = parseInt(uuid());
-    this.nome = nome;
-    this.Book = [];
+  get nome(): string {
+    return this.author;
+  }
+
+  set nome(value: string) {
+    this.author = value;
   }
 }
