@@ -1,4 +1,6 @@
+import { Author } from "../identities/Author";
+
 export interface ICreateBookDTO {
-  title: string;
-  author: string;
+  titulo: string;
+  nome: Author;
 }

@@ -12,4 +12,9 @@ export class BookService {
     const create = await this.bookRepository.create(createBookDTO);
     return create;
   }
+
+  public async getAuthor(author: string, id: string): Promise<Book> {
+    const book = await this.bookRepository.getAuthor(author, id);
+    return book;
+  }
 }

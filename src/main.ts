@@ -1,9 +1,6 @@
 import Express, { Request, Response } from "express";
 
-import { BookController } from "./controller/BookController";
-import { Author } from "./identities/Author";
-import { Book } from "./identities/Book";
-import { AuthorService } from "./services/BookService";
+import { BookController } from "./useCases/CreateBook/controller/BookController";
 
 const app = Express();
 const port = 3000;

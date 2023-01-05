@@ -11,22 +11,25 @@ datasource db {
 }
 
 model Book {
-  id     Int      @unique
-  titulo String
-  author Author[]
-  image  Image[]
+  id        String   @id @default(uuid())
+  titulo    String
+  author    Author[]
+  image     Image[]
+  createdAt DateTime @default(now())
 }
 
 model Image {
-  id     Int    @unique
-  url    String
-  Book   Book?  @relation(fields: [bookId], references: [id])
-  bookId Int?
+  id        String   @id @default(uuid())
+  url       String
+  Book      Book?    @relation(fields: [bookId], references: [id])
+  bookId    String?
+  createdAt DateTime @default(now())
 }
 
 model Author {
-  id     Int    @unique
-  nome   String
-  Book   Book?  @relation(fields: [bookId], references: [id])
-  bookId Int?
+  id        String   @id @default(uuid())
+  nome      String
+  Book      Book?    @relation(fields: [bookId], references: [id])
+  bookId    String?
+  createdAt DateTime @default(now())
 }

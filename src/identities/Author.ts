@@ -1,16 +1,18 @@
 import { uuid } from "uuidv4";
-export class Author {
-  public readonly id: string;
-  constructor(public author: string) {
+
+import { IAuthor } from "./Interface/IAuthor";
+export class Author implements IAuthor {
+  public id?: string;
+  constructor(public nome: string) {
     this.id = uuid();
-    this.author = author;
+    this.nome = nome;
   }
 
-  get nome(): string {
-    return this.author;
+  get author(): string {
+    return this.nome;
   }
 
-  set nome(value: string) {
-    this.author = value;
+  set author(value: string) {
+    this.nome = value;
   }
 }
